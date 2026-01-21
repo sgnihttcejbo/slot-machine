@@ -1,0 +1,21 @@
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.venv
+venv
+ENV
+.env
+build/
+dist/
+*.spec
+.git/
+.vscode/
+.vs/
+*.wav
+# Note: You might want to include wav files if they are needed in the container, 
+# but usually large media is copied selectively. Here they are small so copy everything.
+# Re-including them just in case:
+!Slot-machine version 3/*.wav
+!Slot-machine version 2/*.wav
+!Slot-machine version 1/*.wav
