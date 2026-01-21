@@ -44,7 +44,10 @@ PAYOUTS = {
     '💎': 50
 }
 
-SAVE_FILE = resource_path("save_game.json")
+if getattr(sys, 'frozen', False):
+    SAVE_FILE = os.path.join(os.path.dirname(sys.executable), "save_game.json")
+else:
+    SAVE_FILE = resource_path("save_game.json")
 
 # --- 3. CUSTOM COMPONENTS ---
 
