@@ -1,7 +1,7 @@
 import tkinter as tk
 from tkinter import messagebox
 import random
-import pygame
+import pygame # type: ignore
 import sys
 import os
 import time
@@ -13,7 +13,7 @@ import threading
 def resource_path(relative_path):
     try:
         if hasattr(sys, '_MEIPASS'):
-            return os.path.join(sys._MEIPASS, relative_path)
+            return os.path.join(sys._MEIPASS, relative_path) # pyright: ignore[reportAttributeAccessIssue]
     except Exception:
         pass
     script_dir = os.path.dirname(os.path.abspath(__file__))
@@ -33,7 +33,7 @@ COLORS = {
     "neon_pink": "#ff00ff"
 }
 
-SYMBOLS = ['🍒', '🍉', '🍋', '🔔', '⭐', '💎', '🍀']
+SYMBOLS = ['🍒', '🍉', '🍋', '🔔', '🍀', '⭐', '💎']
 PAYOUTS = {
     '🍒': 2,
     '🍉': 4,
@@ -49,6 +49,20 @@ if getattr(sys, 'frozen', False):
 else:
     SAVE_FILE = resource_path("save_game.json")
 
+def get_gaussian_symbol():
+    mean = (len(SYMBOLS) - 1) / 2.0  # Center at index 3
+    stdev = len(SYMBOLS) / 4.0       # Spread determines rarity of extremes
+    
+    # Box-Muller transform
+    u = 1.0 - random.random()
+    v = 1.0 - random.random()
+    z = math.sqrt(-2.0 * math.log(u)) * math.cos(2.0 * math.pi * v)
+    
+    index = int(round(z * stdev + mean))
+    # Clamp to valid range
+    index = max(0, min(len(SYMBOLS) - 1, index))
+    return SYMBOLS[index]
+
 # --- 3. CUSTOM COMPONENTS ---
 
 class ScrollingReel(tk.Canvas):
@@ -61,7 +75,7 @@ class ScrollingReel(tk.Canvas):
             highlightbackground="#1a1a2e",
             **kwargs
         )
-        self.symbols = [random.choice(SYMBOLS) for _ in range(5)]
+        self.symbols = [get_gaussian_symbol() for _ in range(5)]
         self.offset = 0
         self.item_ids = []
         self.draw_reel()
@@ -83,7 +97,7 @@ class ScrollingReel(tk.Canvas):
         if self.offset >= 80:
             self.offset = 0
             self.symbols.pop()
-            self.symbols.insert(0, random.choice(SYMBOLS))
+            self.symbols.insert(0, get_gaussian_symbol())
             self.draw_reel()
         else:
             for i, tid in enumerate(self.item_ids):
@@ -322,11 +336,11 @@ class SlotMachineV3:
 
     def finish_spin(self, bet):
         # Natural Roll
-        final_results = [random.choice(SYMBOLS) for _ in range(3)]
+        final_results = [get_gaussian_symbol() for _ in range(3)]
         
         # 1% LUCK BOOST: Force a win if a random roll hits
         if random.random() < 0.01:
-            win_sym = random.choice(SYMBOLS)
+            win_sym = get_gaussian_symbol()
             final_results = [win_sym, win_sym, win_sym]
 
         for i, reel in enumerate(self.reels):
