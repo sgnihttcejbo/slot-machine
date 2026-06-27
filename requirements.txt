@@ -1,1 +1,4 @@
-pygame
+# Dependencies for Slot Machine
+
+# Pygame is used to handle the audio playback for spins and wins.
+pygame>=2.0.0
