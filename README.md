@@ -5,6 +5,10 @@
 ![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)
 ![Platform](https://img.shields.io/badge/platform-Windows-lightgrey.svg)
 
+<p align="center">
+  <img src="assets/royal-slots.png" alt="Royal Slots Casino" width="100%">
+</p>
+
 A feature-rich, premium slot machine game built with Python and Tkinter. This latest version introduces persistent save states, auto-spin mechanics, a detailed history log, and a Gaussian distribution system for a fairer, more thrilling gameplay loop.
 
 ## What's New in V3.2
