@@ -1,4 +1,4 @@
-# Slot Machine: Neon Strike V3.2
+# Slot Machine: Royal Slots V3.2
 
 ![Python 3.12.x](https://img.shields.io/badge/Python%203.12.x-3776AB?logo=python&logoColor=white)
 ![Tkinter](https://img.shields.io/badge/Tkinter-8A2BE2)
