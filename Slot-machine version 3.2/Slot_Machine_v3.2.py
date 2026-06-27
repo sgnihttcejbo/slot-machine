@@ -131,10 +131,10 @@ class ModernButton(tk.Button):
         self.bind("<Leave>", lambda e: self.config(bg=self.default_bg))
 
 # --- 4. MAIN GAME ENGINE ---
-class SlotMachineV3:
+class SlotMachineV3_2:
     def __init__(self, root):
         self.root = root
-        self.root.title("NEON STRIKE V3")
+        self.root.title("NEON STRIKE V3.2")
         self.root.geometry("1000x850") # Increased width to fit all panels
         self.root.configure(bg=COLORS["bg"])
         
@@ -193,8 +193,8 @@ class SlotMachineV3:
         self.main_canvas.pack(fill="both", expand=True)
 
         self.draw_vector_logo(250, 45)
-        self.main_canvas.create_text(250, 90, text="NEON STRIKE V3", font=("Segoe UI Black", 32), fill=COLORS["accent"])
-        self.main_canvas.create_text(252, 92, text="NEON STRIKE V3", font=("Segoe UI Black", 32), fill=COLORS["accent_glow"])
+        self.main_canvas.create_text(250, 90, text="NEON STRIKE V3.2", font=("Segoe UI Black", 32), fill=COLORS["accent"])
+        self.main_canvas.create_text(252, 92, text="NEON STRIKE V3.2", font=("Segoe UI Black", 32), fill=COLORS["accent_glow"])
         
         self.draw_rounded_rect(150, 140, 350, 220, 20, COLORS["surface"])
         self.main_canvas.create_text(250, 160, text="TOTAL BALANCE", font=("Segoe UI", 10, "bold"), fill=COLORS["text_muted"])
@@ -383,5 +383,5 @@ if __name__ == "__main__":
         windll.shcore.SetProcessDpiAwareness(1)
     except: pass
     root = tk.Tk()
-    app = SlotMachineV3(root)
+    app = SlotMachineV3_2(root)
     root.mainloop()

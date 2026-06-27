@@ -1,4 +1,4 @@
-# Slot Machine: Neon Strike V3.1
+# Slot Machine: Neon Strike V3.2
 
 ![Python 3.12.x](https://img.shields.io/badge/Python%203.12.x-3776AB?logo=python&logoColor=white)
 ![Tkinter](https://img.shields.io/badge/Tkinter-8A2BE2)
@@ -7,7 +7,7 @@
 
 A feature-rich, neon-themed slot machine game built with Python and Tkinter. This latest version introduces persistent save states, auto-spin mechanics, a detailed history log, and a Gaussian distribution system for more predictable reel outcomes.
 
-## What's New in V3.1
+## What's New in V3.2
 
 ### The "Fair Play" Gaussian RNG System 
 Say goodbye to extreme streaks of bad luck! We've replaced the old flat RNG with a **Normal (Gaussian) Distribution System** using the Box-Muller transform. 
@@ -46,7 +46,7 @@ Keep track of your hot streaks! The newly expanded **History Dashboard** provide
    ```
 2. Navigate to the latest version folder:
    ```bash
-   cd "Slot-Machine/Slot-machine version 3"
+   cd "Slot-Machine/Slot-machine version 3.2"
    ```
 3. Install dependencies:
    ```bash
@@ -54,7 +54,7 @@ Keep track of your hot streaks! The newly expanded **History Dashboard** provide
    ```
 4. Run the game:
    ```bash
-   python Slot_Machine_v3.py
+   python Slot_Machine_v3.2.py
    ```
 
 ## How to Play
