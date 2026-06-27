@@ -5,31 +5,30 @@
 ![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)
 ![Platform](https://img.shields.io/badge/platform-Windows-lightgrey.svg)
 
-A feature-rich, neon-themed slot machine game built with Python and Tkinter. This latest version introduces persistent save states, auto-spin mechanics, a detailed history log, and a Gaussian distribution system for more predictable reel outcomes.
+A feature-rich, premium slot machine game built with Python and Tkinter. This latest version introduces persistent save states, auto-spin mechanics, a detailed history log, and a Gaussian distribution system for a fairer, more thrilling gameplay loop.
 
 ## What's New in V3.2
 
 ### The "Fair Play" Gaussian RNG System 
 Say goodbye to extreme streaks of bad luck! We've replaced the old flat RNG with a **Normal (Gaussian) Distribution System** using the Box-Muller transform. 
-* Outcomes naturally cluster around mid-tier rolls (Lemon, Bell, Clover).
+* Outcomes naturally cluster around mid-tier rolls.
 * Extreme outliers (like hitting the lowest payout or the mega jackpot) are mathematically rarer, making those big jackpot wins feel like a genuine, momentous achievement!
 
 ### Persistent Sessions
 Never lose your progress again. The new **Persistence System** automatically records your balance, total wins, and total losses to a local `save_game.json` file. Your casino empire waits exactly where you left it.
 
-### Live History Dashboard
-Keep track of your hot streaks! The newly expanded **History Dashboard** provides a real-time side panel logging every win and loss during your session. 
-
 ### Quality of Life Additions
 * **Auto-Spin**: Sit back and let the machine do the work with the new toggleable "AUTO" system. 
-* **Audio Control**: Instantly mute or unmute the sound effects using the interactive toggle directly on the main interface. 
+* **Audio Control**: Instantly mute or unmute the sound effects using the interactive toggle directly on the top navigation bar. 
+* **Fullscreen Support**: Immerse yourself in the action with the new dedicated fullscreen toggle (or by pressing F11).
 
-## Visual & UI Overhaul
+## Premium Visual & UI Overhaul
 
-* **Neon Aesthetic**: A complete visual redesign featuring a sleek dark theme, glowing neon accents, and a striking vector lightning bolt logo.
-* **Smooth Glass Reels**: Custom `ScrollingReel` mechanics enhanced with a "glass effect" overlay for buttery-smooth spinning animations. 
-* **Widescreen Experience**: The game window has been expanded to a cinematic **1000x850** resolution to comfortably fit the new history panels.
-* **Dynamic Feedback**: Upgraded rounded buttons with reactive hover states, plus an exciting **screen-shake effect** whenever you hit a big win!
+* **Royal Gold & Obsidian Aesthetic**: We've stripped away the chaotic neon effects in favor of a sleek, luxurious layout featuring deep obsidian backgrounds, frosted glass panels, and sharp gold typography.
+* **Structured Architecture**: The interface has been rebuilt into a professional layout with a dedicated top navigation bar, a central slot stage, and a unified bottom control deck.
+* **Curved Cylinder Reels**: Custom scrolling mechanics enhanced with a stippled gradient illusion to simulate curved metal slot cylinders.
+* **Live History Sidebar**: Keep track of your hot streaks. The expanded History Dashboard is now flawlessly integrated into a unified right sidebar, logging every win and loss during your session in real time.
+* **Luxurious Animations**: Experience a slow, breathing golden radial glow behind the machine, smooth hover states on the buttons, and a sophisticated scale-bump font effect whenever you hit a big win.
 
 ---
 
@@ -60,7 +59,7 @@ Keep track of your hot streaks! The newly expanded **History Dashboard** provide
 ## How to Play
 1. Start with your current saved balance (or a fresh ₹20,000).
 2. Enter your bet amount.
-3. Click **SPIN TO WIN** and wait for the symbols to line up.
+3. Click **SPIN** and wait for the symbols to line up.
 4. Winning combinations require 3 of the same symbol across the reels:
    - Cherry: 2x Bet
    - Watermelon: 4x Bet
